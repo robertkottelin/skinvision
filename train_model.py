@@ -18,13 +18,13 @@ validation_datagen = ImageDataGenerator(rescale=1./255)
 train_generator = train_datagen.flow_from_directory(
     os.path.join(base_dir, 'train'),  # directory should contain subdirectories 'benign' and 'malignant'
     target_size=(150, 150),
-    batch_size=32,
+    batch_size=5,
     class_mode='binary')
 
 validation_generator = validation_datagen.flow_from_directory(
     os.path.join(base_dir, 'validation'),  # directory should contain subdirectories 'benign' and 'malignant'
     target_size=(150, 150),
-    batch_size=32,
+    batch_size=5,
     class_mode='binary')
 
 
