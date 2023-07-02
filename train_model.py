@@ -62,7 +62,7 @@ model.compile(optimizer='adam',
 history = model.fit(
     train_generator,
     steps_per_epoch=len(train_generator),
-    epochs=10,
+    epochs=5,
     validation_data=validation_generator,
     validation_steps=len(validation_generator)
 )
