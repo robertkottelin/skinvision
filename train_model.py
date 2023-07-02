@@ -20,13 +20,13 @@ validation_datagen = ImageDataGenerator(rescale=1./255)
 train_generator = train_datagen.flow_from_directory(
     os.path.join(base_dir, 'train'),  # directory should contain subdirectories 'benign' and 'malignant'
     target_size=(299, 299),
-    batch_size=5,
+    batch_size=32,
     class_mode='binary')
 
 validation_generator = validation_datagen.flow_from_directory(
     os.path.join(base_dir, 'validation'),  # directory should contain subdirectories 'benign' and 'malignant'
     target_size=(299, 299),
-    batch_size=5,
+    batch_size=32,
     class_mode='binary')
 
 
@@ -62,7 +62,7 @@ model.compile(optimizer='adam',
 history = model.fit(
     train_generator,
     steps_per_epoch=len(train_generator),
-    epochs=5,
+    epochs=10,
     validation_data=validation_generator,
     validation_steps=len(validation_generator)
 )
