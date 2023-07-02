@@ -67,6 +67,8 @@ history = model.fit(
     validation_steps=len(validation_generator)
 )
 
+# Save your final model after training on all CSV files
+model.save('mark1_skinvision.h5')
 
 # Plot training & validation accuracy values
 plt.figure(figsize=(12, 4))
